@@ -1,0 +1,69 @@
+﻿@model IEnumerable<MovieRental.MVC.Models.Movie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<form asp-action="Index" method="get">
+    <div class="form-group">
+        <label for="SearchString">Szukaj filmu po tytule:</label>
+        <input type="text" name="searchString" value="@ViewData["CurrentFilter"]"/>
+        <input type="submit" value="Szukaj" class="btn btn-primary" />
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Production_year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Production_year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price) zł
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                        <a asp-action="Edit" asp-route-id="@item.MovieId"><i class="fas fa-edit"></i></a> |
+                    <a asp-action="Details" asp-route-id="@item.MovieId"><i class="fas fa-info-circle"></i></a> |
+                        <a asp-action="Delete" asp-route-id="@item.MovieId"><i class="fas fa-trash"></i></a>
+                </td>
+            </tr>
+        }
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+    </tbody>
+</table>
