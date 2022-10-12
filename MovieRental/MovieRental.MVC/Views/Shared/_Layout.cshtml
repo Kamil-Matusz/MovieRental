@@ -31,12 +31,18 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Movie" asp-action="FantasyMovieList">Fantasy</a>
                             </div>
                         </li>
+                        @if (User.IsInRole("User") || User.IsInRole("Admin")) {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Logout">Wyloguj</a>
+                            </li>
+                        }
+                        else {
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="Account" asp-action="Register">Utwórz konto</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Logowanie</a>
-                        </li>
+                        </li> }
                     </ul>
                 </div>
             </div>
