@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MovieRental.MVC.Models
 {
@@ -7,11 +8,13 @@ namespace MovieRental.MVC.Models
 
         [Key]
         [Required]
-        public int OrdersId { get; set; }
+        public int OrderId { get; set; }
+        public string Email { get; set; }
 
-        public Movie Movie { get; set; }
+        public List<OrderItem> OrderItems { get; set; }
+        /*public Movie Movie { get; set; }
         public int MovieId { get; set; }
         public Client Client { get; set; }
-        public int ClientId { get; set; }
+        public int ClientId { get; set; } */
     }
 }

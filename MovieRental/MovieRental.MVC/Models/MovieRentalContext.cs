@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MovieRental.MVC.Models.Cart;
 
 namespace MovieRental.MVC.Models
 {
@@ -11,26 +12,25 @@ namespace MovieRental.MVC.Models
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Client>()
-                .Property(x => x.PhoneNumber)
-                .HasMaxLength(12);
-
-            modelBuilder.Entity<Client>(eb =>
-            {
-                eb.HasMany(x => x.Orders)
-                .WithOne(x => x.Client)
-                .HasForeignKey(x => x.ClientId);
-            });
 
             modelBuilder.Entity<Movie>(eb =>
             {
-                eb.HasMany(x => x.Orders)
+                eb.HasMany(x => x.OrderItems)
                 .WithOne(x => x.Movie)
                 .HasForeignKey(x => x.MovieId);
+            });
+
+            modelBuilder.Entity<Order>(eb =>
+            {
+                eb.HasMany(x => x.OrderItems)
+                .WithOne(x => x.Order)
+                .HasForeignKey(x => x.OrderId);
             });
 
             modelBuilder.Entity<User>()
