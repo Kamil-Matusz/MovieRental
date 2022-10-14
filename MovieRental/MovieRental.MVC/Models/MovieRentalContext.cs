@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MovieRental.MVC.Models.Cart;
 
 namespace MovieRental.MVC.Models
 {
@@ -10,29 +9,11 @@ namespace MovieRental.MVC.Models
 
         }
         public DbSet<Movie> Movies { get; set; }
-        public DbSet<Client> Clients { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
-            modelBuilder.Entity<Movie>(eb =>
-            {
-                eb.HasMany(x => x.OrderItems)
-                .WithOne(x => x.Movie)
-                .HasForeignKey(x => x.MovieId);
-            });
-
-            modelBuilder.Entity<Order>(eb =>
-            {
-                eb.HasMany(x => x.OrderItems)
-                .WithOne(x => x.Order)
-                .HasForeignKey(x => x.OrderId);
-            });
-
             modelBuilder.Entity<User>()
                 .HasData(new User()
                 {
@@ -53,5 +34,6 @@ namespace MovieRental.MVC.Models
                     HashPassword = "AQAAAAEAACcQAAAAEGn3IGsBmSOp78M8hKtd9kLvuvl3U4PjkuR7uOp7iC2U1qsZQhL34+OzILMC4r9NoA=="
                 });
         }
+
     }
 }

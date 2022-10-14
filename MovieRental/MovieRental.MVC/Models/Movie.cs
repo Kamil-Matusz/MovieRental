@@ -20,6 +20,5 @@ namespace MovieRental.MVC.Models
         [DisplayName("Opis")]
         public string Description { get; set; }
 
-        public List<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
     }
 }

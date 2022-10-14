@@ -40,6 +40,10 @@ namespace MovieRental.MVC.Controllers
         public IActionResult Details(int id)
         {
             var movie = _movieService.GetMovieById(id);
+            if (movie is null)
+            {
+                return View("NotFound");
+            }
             return View(movie);
         }
 
@@ -85,6 +89,19 @@ namespace MovieRental.MVC.Controllers
         public IActionResult Edit(int id)
         {
             var movie = _movieService.GetMovieById(id);
+            return View(movie);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Movie movie)
+        {
+            if (ModelState.IsValid)
+            {
+                _movieService.UpdateMovie(movie);
+                TempData["Message"] = "You have saved the restaurant!";
+                return RedirectToAction("Details", new { id = movie.MovieId });
+            }
             return View(movie);
         }
 

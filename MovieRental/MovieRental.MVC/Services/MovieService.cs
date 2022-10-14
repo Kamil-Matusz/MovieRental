@@ -67,7 +67,7 @@ namespace MovieRental.MVC.Services
         public void UpdateMovie(Movie movie)
         {
             var entry = _dbContext.Entry(movie);
-            entry.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+           entry.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _dbContext.SaveChanges();
         }
     }
