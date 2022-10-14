@@ -1,5 +1,6 @@
 ﻿using MovieRental.MVC.Models;
 using System.Collections.Generic;
+using System.IO.Pipelines;
 using System.Linq;
 
 namespace MovieRental.MVC.Services
@@ -10,6 +11,14 @@ namespace MovieRental.MVC.Services
         public MovieService(MovieRentalContext dbContext)
         {
             _dbContext = dbContext;
+        }
+
+        public IEnumerable<Movie> Movies
+        {
+            get
+            {
+                return _dbContext.Movies;
+            }
         }
 
         public void AddMovie(Movie movie)

@@ -35,6 +35,10 @@ namespace MovieRental.MVC
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 
+            services.AddSession();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
+
 
             services.AddDbContext<MovieRentalContext>(
                options => options.UseSqlServer(Configuration.GetConnectionString("MovieRentalConnectionString")));
@@ -55,9 +59,9 @@ namespace MovieRental.MVC
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
 
             app.UseRouting();
-            app.UseSession();
             app.UseAuthentication();
             app.UseAuthorization();
 

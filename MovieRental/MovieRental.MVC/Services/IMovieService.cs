@@ -1,10 +1,12 @@
 ﻿using MovieRental.MVC.Models;
 using System.Collections.Generic;
+using System.IO.Pipelines;
 
 namespace MovieRental.MVC.Services
 {
     public interface IMovieService
     {
+        IEnumerable<Movie> Movies { get; }
         IEnumerable<Movie> GetAllMovies();
         IEnumerable<Movie> GetAllHorrorMovies();
         IEnumerable<Movie> GetAllFantasyMovies();

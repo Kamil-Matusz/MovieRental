@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<MovieRental.MVC.Models.Movie>
-
 @{
     ViewData["Title"] = "Index";
 }
@@ -53,20 +52,19 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
-                    @if(User.IsInRole("Admin"))
+                @if (User.IsInRole("Admin"))
                 {
                     <td>
-                    <a asp-action="Edit" asp-route-id="@item.MovieId"><i class="fas fa-edit"></i></a> |
-                    <a asp-action="Details" asp-route-id="@item.MovieId"><i class="fas fa-info-circle"></i></a> |
-                    <a asp-action="Delete" asp-route-id="@item.MovieId"><i class="fas fa-trash"></i></a>
-                </td>
+                        <a asp-action="Edit" asp-route-id="@item.MovieId"><i class="fas fa-edit"></i></a> |
+                        <a asp-action="Details" asp-route-id="@item.MovieId"><i class="fas fa-info-circle"></i></a> |
+                        <a asp-action="Delete" asp-route-id="@item.MovieId"><i class="fas fa-trash"></i></a>
+                    </td>
                 }
-                else if(User.IsInRole("User")) {
-                            <a class="btn btn-success text-white" 
-                                   asp-controller="Order" 
-                                   asp-action="AddItemToShoppingCart" 
-                                   asp-route-id="@item.MovieId">
-                                        <i class="bi bi-cart-plus"></i> Add to Cart (Price @item.Price.ToString("c"))</a>       
+                else if (User.IsInRole("User"))
+                {
+                    <td>
+                    <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-id="@item.MovieId">Zamów</a>
+                    </td>
                 }
             </tr>
         }

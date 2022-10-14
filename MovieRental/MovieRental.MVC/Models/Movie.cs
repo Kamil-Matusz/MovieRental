@@ -20,5 +20,6 @@ namespace MovieRental.MVC.Models
         [DisplayName("Opis")]
         public string Description { get; set; }
 
+        public List<ShoppingCartItem> ShoppingCartItems { get; set; } = new List<ShoppingCartItem>();
     }
 }
