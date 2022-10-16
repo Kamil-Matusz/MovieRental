@@ -29,3 +29,11 @@ Project representing a movie rental shop with order handling made in .NET MVC
 <br/>
 `` Password : user``
 <br/>
+### User functions
+``Viewing the list of movies``
+<br/>
+``Searching movies after the title``
+<br/>
+``Placing orders``
+<br/>
+``Creating new account and logging for on this account``
