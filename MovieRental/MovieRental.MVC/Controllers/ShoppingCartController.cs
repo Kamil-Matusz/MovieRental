@@ -3,6 +3,7 @@ using MovieRental.MVC.Models;
 using MovieRental.MVC.Services;
 using MovieRental.MVC.ViewModels;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace MovieRental.MVC.Controllers
 {
@@ -17,7 +18,7 @@ namespace MovieRental.MVC.Controllers
             _shoppingCart = shoppingCart;
         }
 
-        public ViewResult Index()
+        public IActionResult Index()
         {
             var items = _shoppingCart.GetShoppingCartItems();
             _shoppingCart.ShoppingCartItems = items;
@@ -31,9 +32,9 @@ namespace MovieRental.MVC.Controllers
             return View(shoppingCartViewModel);
         }
 
-        public RedirectToActionResult AddToShoppingCart(int movieId)
+         public IActionResult AddToShoppingCart(int movieId)
         {
-            var selectedMovie = _movieService.Movies.FirstOrDefault(p => p.MovieId == movieId);
+             var selectedMovie = _movieService.Movies.FirstOrDefault(p => p.MovieId == movieId);
 
             if (selectedMovie != null)
             {
@@ -42,7 +43,7 @@ namespace MovieRental.MVC.Controllers
             return RedirectToAction("Index");
         }
 
-        public RedirectToActionResult RemoveFromShoppingCart(int movieId)
+        public IActionResult RemoveFromShoppingCart(int movieId)
         {
             var selectedMovie = _movieService.Movies.FirstOrDefault(p => p.MovieId == movieId);
 

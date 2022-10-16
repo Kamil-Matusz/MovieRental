@@ -1,6 +1,7 @@
 ﻿using MovieRental.MVC.Models;
 using System.Collections.Generic;
 using System.IO.Pipelines;
+using System.Threading.Tasks;
 
 namespace MovieRental.MVC.Services
 {
