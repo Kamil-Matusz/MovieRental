@@ -99,7 +99,7 @@ namespace MovieRental.MVC.Controllers
             if (ModelState.IsValid)
             {
                 _movieService.UpdateMovie(movie);
-                TempData["Message"] = "You have saved the restaurant!";
+                TempData["Message"] = "Film został zapisany w bazie";
                 return RedirectToAction("Details", new { id = movie.MovieId });
             }
             return View(movie);

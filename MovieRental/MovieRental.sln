@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRental.MVC", "MovieRental.MVC\MovieRental.MVC.csproj", "{B7DB1CCB-DC8C-4920-81AA-7106CF93C660}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRental.MVC", "MovieRental.MVC\MovieRental.MVC.csproj", "{B7DB1CCB-DC8C-4920-81AA-7106CF93C660}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRental.Tests", "MovieRental.Tests\MovieRental.Tests.csproj", "{AEC58F76-2896-4BBE-AA2D-185FADE77B2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRental.Tests", "MovieRental.Tests\MovieRental.Tests.csproj", "{AEC58F76-2896-4BBE-AA2D-185FADE77B2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

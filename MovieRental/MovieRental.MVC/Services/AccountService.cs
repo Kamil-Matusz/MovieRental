@@ -47,10 +47,7 @@ namespace MovieRental.MVC.Services
                         IsPersistent = false,
                     };
 
-                    await httpContext.SignInAsync(
-                        CookieAuthenticationDefaults.AuthenticationScheme,
-                        new ClaimsPrincipal(claimsIdentity),
-                        authProperties);
+                    await httpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,new ClaimsPrincipal(claimsIdentity),authProperties);
 
                     return true;
                 }
