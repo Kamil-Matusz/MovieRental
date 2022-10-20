@@ -11,6 +11,8 @@ namespace MovieRental.MVC.Models
         public DbSet<Movie> Movies { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Movie>(eb =>
@@ -18,6 +20,13 @@ namespace MovieRental.MVC.Models
                 eb.HasMany(x => x.ShoppingCartItems)
                 .WithOne(x => x.Movie)
                 .HasForeignKey(x => x.MovieId);
+            });
+
+            modelBuilder.Entity<Order>(eb =>
+            {
+                eb.HasMany(x => x.OrderDetails)
+                .WithOne(x => x.Order)
+                .HasForeignKey(x => x.OrderId);
             });
 
             modelBuilder.Entity<User>()
