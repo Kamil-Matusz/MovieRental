@@ -29,6 +29,15 @@ namespace MovieRental.MVC.Models
                 .HasForeignKey(x => x.OrderId);
             });
 
+            modelBuilder.Entity<Order>()
+                .Property(x => x.FirstName).HasMaxLength(50);
+            modelBuilder.Entity<Order>()
+                .Property(x => x.LastName).HasMaxLength(50);
+            modelBuilder.Entity<Order>()
+                .Property(x => x.Email).HasMaxLength(50);
+            modelBuilder.Entity<Order>()
+               .Property(x => x.PhoneNumber).HasMaxLength(12);
+
             modelBuilder.Entity<User>()
                 .HasData(new User()
                 {
