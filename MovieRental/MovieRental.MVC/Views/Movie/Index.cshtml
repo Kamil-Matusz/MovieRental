@@ -3,7 +3,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Biblioteka Filmów</h1>
 
 <form asp-action="Index" method="get">
     <div class="form-group">
@@ -69,9 +69,11 @@
             </tr>
         }
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-
     </tbody>
 </table>
+
+@if(User.IsInRole("Admin")) {
+        <button>
+        <a asp-action="Create">Dodaj nowy film</a>
+    </button>
+}
