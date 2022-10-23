@@ -1,7 +1,9 @@
-﻿using MovieRental.MVC.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using MovieRental.MVC.Models;
 using System.Collections.Generic;
 using System.IO.Pipelines;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace MovieRental.MVC.Services
 {
@@ -12,7 +14,6 @@ namespace MovieRental.MVC.Services
         {
             _dbContext = dbContext;
         }
-
         public IEnumerable<Movie> Movies
         {
             get
@@ -79,5 +80,6 @@ namespace MovieRental.MVC.Services
            entry.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _dbContext.SaveChanges();
         }
+
     }
 }

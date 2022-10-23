@@ -34,6 +34,7 @@ namespace MovieRental.MVC
             services.AddScoped<IMovieService, MovieService>();
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+            services.AddScoped<IOrderService, OrderService>();
 
             services.AddSession();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

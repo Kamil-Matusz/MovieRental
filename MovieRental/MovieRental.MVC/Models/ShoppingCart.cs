@@ -22,8 +22,7 @@ namespace MovieRental.MVC.Models
 
         public static ShoppingCart GetCart(IServiceProvider services)
         {
-            ISession session = services.GetRequiredService<IHttpContextAccessor>()?
-                .HttpContext.Session;
+            ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
 
             var context = services.GetService<MovieRentalContext>();
             string cartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
@@ -35,10 +34,9 @@ namespace MovieRental.MVC.Models
 
         public void AddToCart(Movie movie, int amount)
         {
-            var shoppingCartItem =
-                    _dbContext.ShoppingCartItems.SingleOrDefault(s => s.Movie.MovieId == movie.MovieId && s.ShoppingCartId == ShoppingCartId);
+            var shoppingCartItem = _dbContext.ShoppingCartItems.FirstOrDefault(s => s.Movie.MovieId == movie.MovieId && s.ShoppingCartId == ShoppingCartId);
 
-            if (shoppingCartItem == null)
+            if (shoppingCartItem is null)
             {
                 shoppingCartItem = new ShoppingCartItem
                 {

@@ -4,10 +4,10 @@
 <table class="table table-bordered table-striped">
     <thead>
     <tr>
-        <th>Selected amount</th>
-        <th>Movie Name</th>
-        <th class="text-right">Price</th>
-        <th class="text-right">Subtotal</th>
+        <th>Ilość</th>
+        <th>Tytuł</th>
+        <th class="text-right">Cena</th>
+        <th class="text-right">Podsumowanie</th>
     </tr>
     </thead>
     <tbody>
@@ -25,7 +25,7 @@
     </tbody>
     <tfoot>
     <tr>
-        <td colspan="3" class="text-right">Total:</td>
+        <td colspan="3" class="text-right">Łącznie:</td>
         <td class="text-right">
                 @Model.ShoppingCartTotal.ToString("c")
         </td>
@@ -34,6 +34,6 @@
 </table>
 
 <div class="text-center">
-    <a class="btn btn-primary" asp-controller="Order" asp-action="Checkout">Check out now!</a>
+    <a class="btn btn-primary" asp-controller="Order" asp-action="Checkout">Przejdź do zamówienia!</a>
 </div>
 
