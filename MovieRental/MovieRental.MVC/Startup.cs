@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MovieRental.MVC.Models;
+using MovieRental.MVC.Models.Contact;
 using MovieRental.MVC.Services;
 using System;
 using System.Collections.Generic;
@@ -40,6 +41,24 @@ namespace MovieRental.MVC
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
 
+            // email configuration
+            EmailServerConfiguration config = new EmailServerConfiguration
+            {
+                SmtpPassword = "Password",
+                SmtpServer = "smtp.someserver.com",
+                SmtpUsername = "awesomeemail@nickolasfisher.com"
+            };
+
+            EmailAddress FromEmailAddress = new EmailAddress
+            {
+                Address = "admin@admin.com",
+                Name = "Awahir"
+            };
+
+            services.AddSingleton<EmailServerConfiguration>(config);
+            services.AddTransient<IEmailService, EmailService>();
+            services.AddSingleton<EmailAddress>(FromEmailAddress);
+            services.AddMvc();
 
             services.AddDbContext<MovieRentalContext>(
                options => options.UseSqlServer(Configuration.GetConnectionString("MovieRentalConnectionString")));
