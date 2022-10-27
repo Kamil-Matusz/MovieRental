@@ -7,6 +7,12 @@ Project representing a movie rental shop with order handling made in .NET MVC
 `` .Net Core 5``
 <br/>
 
+#Theme
+``Solar Theme``
+<br/>
+Download form: https://bootswatch.com/
+<br/>
+
 # Default login
 ### Admin
 `` Login : admin@admin.com``
