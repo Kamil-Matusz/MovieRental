@@ -8,6 +8,7 @@ Project representing a movie rental shop with order handling made in .NET MVC
 <br/>
 
 #Theme
+<br/>
 ``Solar Theme``
 <br/>
 Download form: https://bootswatch.com/
