@@ -13,6 +13,9 @@ Project representing a movie rental shop with order handling made in .NET MVC
 Download form: https://bootswatch.com/
 <br/>
 
+# Graphic diagram of database
+![](/git/database-diagram.png)
+
 # Default login
 ### Admin
 `` Login : admin@admin.com``
@@ -38,3 +41,7 @@ Download form: https://bootswatch.com/
  - Placing orders
  - Creating new account and logging for on this account
  - Sending an email with request
+
+# Database
+### Configuration
+To ensure that error dosen't occur when connecting to database, data needed for connection should be substituted in the file ``appsettings.Development.json`` by line ``3``
