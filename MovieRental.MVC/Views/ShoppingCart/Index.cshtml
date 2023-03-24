@@ -1,0 +1,39 @@
+﻿@model MovieRental.MVC.ViewModels.ShoppingCartViewModel
+
+<h2>Lista filmów do wypożyczenia</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>Ilość</th>
+        <th>Tytuł</th>
+        <th class="text-right">Cena</th>
+        <th class="text-right">Podsumowanie</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var line in Model.ShoppingCart.ShoppingCartItems)
+        {
+            <tr>
+                <td class="text-center">@line.Amount</td>
+                <td class="text-left">@line.Movie.Name</td>
+                <td class="text-right">@line.Movie.Price.ToString("c")</td>
+                <td class="text-right">
+                    @((line.Amount * line.Movie.Price).ToString("c"))
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="3" class="text-right">Łącznie:</td>
+        <td class="text-right">
+                @Model.ShoppingCartTotal.ToString("c")
+        </td>
+    </tr>
+    </tfoot>
+</table>
+
+<div class="text-center">
+    <a class="btn btn-primary" asp-controller="Order" asp-action="Checkout">Przejdź do zamówienia!</a>
+</div>
+
