@@ -1,11 +1,16 @@
 # MovieRental
 Project representing a movie rental shop with order handling made in .NET MVC 
 
-# Requirements
-`` SQL Server 2016 ``
-<br/>
-`` .Net Core 5``
-<br/>
+### Technologies
+ - C# 11
+ - .NET 5.0
+ - EF Core
+ - Microsoft SQL Studio
+ - .NET JWT
+ - HTML
+ - CSS
+ - JavaScript
+ - Bootstrap
 
 # Theme
 ``Solar Theme``
