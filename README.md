@@ -23,9 +23,9 @@ Download form: https://bootswatch.com/
 
 # Default login
 ### Admin
-`` Login : admin@admin.com``
+``Login : admin@admin.com``
 <br/>
-`` Password : admin``
+``Password : admin``
 <br/>
 
 ### Admin functions
@@ -38,7 +38,7 @@ Download form: https://bootswatch.com/
 ### User
 ``Login : user@user.com``
 <br/>
-`` Password : user``
+`Password : user`
 <br/>
 ### User functions
  - Viewing the list of movies
