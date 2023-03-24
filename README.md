@@ -22,11 +22,11 @@ Download form: https://bootswatch.com/
 ![](/git/database-diagram.png)
 
 # Application Views
-![](/git/All_films.png)
-![](/git/Create_movie.png)
-![](/git/Edit_movie.png)
-![](/git/Delete_movie.png)
-![](/git/Order_movie.png)
+![](/git/All_films.PNG)
+![](/git/Create_movie.PNG)
+![](/git/Edit_movie.PNG)
+![](/git/Delete_movie.PNG)
+![](/git/Order_movie.PNG)
 
 # Default login
 ### Admin
