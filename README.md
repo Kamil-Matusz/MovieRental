@@ -21,11 +21,18 @@ Download form: https://bootswatch.com/
 # Graphic diagram of database
 ![](/git/database-diagram.png)
 
+# Application Views
+![](/git/All_films.png)
+![](/git/Create_movie.png)
+![](/git/Edit_movie.png)
+![](/git/Delete_movie.png)
+![](/git/Order_movie.png)
+
 # Default login
 ### Admin
-``Login : admin@admin.com``
+``Login: admin@admin.com``
 <br/>
-``Password : admin``
+``Password: admin``
 <br/>
 
 ### Admin functions
@@ -36,9 +43,9 @@ Download form: https://bootswatch.com/
 - Receiving emails from users
 
 ### User
-``Login : user@user.com``
+``Login: user@user.com``
 <br/>
-`Password : user`
+`Password: user`
 <br/>
 ### User functions
  - Viewing the list of movies
